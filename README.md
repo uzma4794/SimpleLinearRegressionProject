@@ -141,15 +141,15 @@ print(model.coef_, model.intercept_)
 Without reshape, you’d get an error like:
 Expected 2D array, got 1D array instead.
 
-Why we use Seaborn?
-
+****Why we use Seaborn?
+****
 Seaborn is a data visualization library built on top of Matplotlib.
 
 It is mainly used for plotting and exploring data.
 
 It provides statistical plots with fewer lines of code.
 
-✅ Typical uses:
+**✅ Typical uses:**
 
 Visualize distributions (histplot, kdeplot).
 
@@ -159,7 +159,7 @@ Show relationships (scatterplot, regplot, lmplot, pairplot).
 
 Quick EDA (Exploratory Data Analysis) before building a model.
 
-👉 Example:
+**👉 Example:**
 
 import seaborn as sns
 sns.regplot(x="hours_studied", y="exam_score", data=df)  # scatter + regression line
