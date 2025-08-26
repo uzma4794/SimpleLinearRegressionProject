@@ -200,3 +200,62 @@ print("Intercept:", model.intercept_)
 This gives us the mathematical model behind the relationship.
 
 👉 So in short: We use reshape in linear regression to convert a 1D array of features into the 2D format required by scikit-learn (n_samples, n_features).
+
+## 🔹 What does “model fit” mean?
+
+When we say “fit a model”, it means:
+👉 Finding the best parameters (coefficients, weights, intercepts, etc.) of a mathematical model that explain the relationship between input (X) and output (y).
+
+For example, in linear regression:
+
+
+y=mX+b
+
+Fit = find the slope m and intercept b that minimize the error between predicted and actual y.
+
+In code:
+
+from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+model.fit(X_train, y_train)   # "fit" means learn the parameters
+
+
+After fitting, the model has "learned" from the training data.
+
+#🔹 Why do we use train-test split in preprocessing?
+
+If we train a model on all the data and then test it on the same data, it will look too good (because it has already seen it). This leads to overfitting (model memorizes data instead of learning patterns).
+
+To avoid this:
+
+We split the dataset into two parts:
+
+Training set → used to fit (train) the model.
+
+Testing set → used to evaluate the model on unseen data.
+
+This helps check whether the model generalizes well to new data.
+
+**👉 Example:**
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = LinearRegression()
+model.fit(X_train, y_train)   # train only on training data
+
+print("Train Score:", model.score(X_train, y_train))
+print("Test Score:", model.score(X_test, y_test))  # evaluate on new unseen data
+
+****🔹 Simple Analogy****
+
+Fitting a model = like studying for an exam (learning patterns).
+
+Train-test split = practice questions vs final exam.
+
+If you only practice the same questions (train only), you might think you’re perfect.
+
+But the real test (test set) checks if you actually understood the concepts.
+
