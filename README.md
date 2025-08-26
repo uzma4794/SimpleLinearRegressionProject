@@ -1,5 +1,58 @@
 # SimpleLinearRegressionProject
 
+
+## 🔹 What is “regression”?
+
+Regression is a statistical technique to model the relationship between variables.
+
+Simple regression: one independent variable (x) → one dependent variable (y).
+
+Multiple regression: multiple x’s → y.
+
+In visualization, regression is usually shown as a line or curve that fits through the data points.
+
+🔹 Why “regression-related plotting functions”?
+
+In Seaborn (a Python visualization library), some plotting functions are designed not just to show raw data (like scatter plots), but also to add regression fits and statistical context.
+
+So when I say regression-related plotting functions, I mean functions that:
+
+Plot the scatter of data points.
+
+Can fit a regression line (trend line) through those points.
+
+Often show confidence intervals around the regression line.
+
+🔹 Examples of these in Seaborn
+
+regplot()
+
+Directly plots data + regression line.
+
+Example:
+
+sns.regplot(x="x", y="y", data=df)
+
+
+lmplot()
+
+A “bigger” version of regplot() that allows faceting (subplots by groups).
+
+jointplot(kind="reg")
+
+Combines scatter + regression line + distributions of x and y.
+
+pairplot(kind="reg")
+
+Shows regression lines across many variable pairs.
+
+residplot()
+
+Shows residuals (the differences between actual data and regression line predictions).
+
+✅ In short:
+“Regression-related plotting functions in Seaborn” = all Seaborn functions that either add regression lines or help you analyze regression fit visually.
+
 ## why we use reshape in linear regression
 
 
