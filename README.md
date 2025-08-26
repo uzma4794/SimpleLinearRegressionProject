@@ -141,4 +141,62 @@ print(model.coef_, model.intercept_)
 Without reshape, you’d get an error like:
 Expected 2D array, got 1D array instead.
 
+Why we use Seaborn?
+
+Seaborn is a data visualization library built on top of Matplotlib.
+
+It is mainly used for plotting and exploring data.
+
+It provides statistical plots with fewer lines of code.
+
+✅ Typical uses:
+
+Visualize distributions (histplot, kdeplot).
+
+Compare categories (boxplot, violinplot).
+
+Show relationships (scatterplot, regplot, lmplot, pairplot).
+
+Quick EDA (Exploratory Data Analysis) before building a model.
+
+👉 Example:
+
+import seaborn as sns
+sns.regplot(x="hours_studied", y="exam_score", data=df)  # scatter + regression line
+
+
+This gives us a visual sense of the relationship.
+
+# 🔹 Why we use Scikit-learn (sklearn)?
+
+Scikit-learn is a machine learning library.
+
+It is mainly used for building and training models.
+
+Provides algorithms for regression, classification, clustering, feature selection, model evaluation, preprocessing, etc.
+
+**✅ Typical uses:**
+
+Train models (LinearRegression, DecisionTree, RandomForest, etc.).
+
+Evaluate performance (accuracy_score, r2_score, etc.).
+
+Preprocess data (StandardScaler, train_test_split).
+
+**👉 Example:**
+
+from sklearn.linear_model import LinearRegression
+
+X = df[["hours_studied"]]   # independent variable
+y = df["exam_score"]        # dependent variable
+
+model = LinearRegression()
+model.fit(X, y)
+
+print("Slope:", model.coef_)
+print("Intercept:", model.intercept_)
+
+
+This gives us the mathematical model behind the relationship.
+
 👉 So in short: We use reshape in linear regression to convert a 1D array of features into the 2D format required by scikit-learn (n_samples, n_features).
